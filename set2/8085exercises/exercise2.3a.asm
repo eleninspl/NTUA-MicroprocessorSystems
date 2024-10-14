@@ -6,7 +6,7 @@ START:
 LOOP1:
 	RRC		; CY= LSB
 	JC FOUND	; if (LSB==1), found 1 
-	MOV E,A	; save A
+	MOV E,A		; save A
 	MOV A,B	
 	RLC		; rotate B
 	MOV B,A
