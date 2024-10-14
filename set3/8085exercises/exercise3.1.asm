@@ -1,4 +1,3 @@
-
 MVI A,10H		; empty the 4 rightmost 7-seg
 STA 0B00H
 STA 0B01H
@@ -51,13 +50,13 @@ NEXT_SEC:
 	PUSH H
 
 	MVI B,FFH	; B=-1 -> tens
-	MOV A,E	; A= timer 
+	MOV A,E		; A= timer 
 LOOP1:
 	INR B
 	SUI 0AH
 	JNC LOOP1
 
-	ADI 0AH	; fix negative result/ A-> units
+	ADI 0AH		; fix negative result/ A-> units
 	STA 0B04H	; store units at 1rst 7-seg
 	MOV A,B
 	STA 0B05H	; store tens at 2nd 7-seg
@@ -80,7 +79,3 @@ DISP_TIMER:
 	RET
 
 END
-	
-	
-
-	
