@@ -1,8 +1,8 @@
 START:
 	CALL KIND
-	CPI 00H	; (A==0)?
+	CPI 00H		; (A==0)?
 	JZ INVALID	; if yes, invalid
-	CPI 09H	; (A<9)?
+	CPI 09H		; (A<9)?
 	JNC INVALID	; if no, invalid
 
 	MOV B,A	; B= A
@@ -10,7 +10,7 @@ START:
 
 LOOP1:
 	DCR B		; B--
-	JZ DONE	; if (B==0), done
+	JZ DONE		; if (B==0), done
 	RLC 		; rotate left
 	INR A		; A++
 	JMP LOOP1	; loop
